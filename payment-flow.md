@@ -2,7 +2,7 @@
 
 To request a specific amount the information a merchant shares need only be: their publickey, an reference id, and an amount of tokens.
 
-Where amount is any number from 0 to 2^53 non-inclusive (9,007,199,254,740,991).
+Where amount is any number from 0 to 2^53 non-inclusive.
 
 ```json
 { "id": "<reference_id>", "to": "<recipient_public_key>", "amount": 14389742 }
@@ -17,7 +17,6 @@ The subsequent payment should be a [BEEF](https://brc.dev/62) transaction, payin
 ```json
 {
     "id": "<reference_id>",
-    "to": "<recipient_public_key>",
     "beef": "<beef_transaction_hex>",
     "from": "<sender_public_key>",
 }
