@@ -64,10 +64,21 @@ Two options for delivery of the payment.
 ### Online
 You can send the transaction to the receiving party wallet server, where it will be validated and broadcast to the network.
 
+The merchant device would recieve a notification from their wallet server which would then reflect that the payment had been recieved successfully.
+
 ### Offline
-This may be the preference whether or not the user has an internet connection as there will be less latency.
+This may be the preference whether or not the user has an internet connection as there will have lower latency.
 
 Using NFC we transmit the payment data directly to the recipient phone. It then validates the transaction before delivering it to its own wallet server, where it will be validated again before broadcast to the network.
 
-## On Device Storage
-The offline state of utxos available to the device needs to be tracked such that 
+If the merchant doesn't have an internet connection, they can still recieve transactions, validating them using SPV, simply broadcast everything when they get back online.
+
+## Storage
+The offline state of transactions and their outputs needs to be available to the device and synced when it has an internet connection.
+
+Block headers must also be kept to allow local validation. These can be synced whenever the device has an internet connection.
+
+Received transcations are stored. Merkle paths are attached when recieved. Outputs are stored if ours, deleted on spend. When last output spend is confirmed in a block, the transaction is deleted from local, but kept for records in wallet server.
+
+## Merkle Paths
+When callbacks hit from ARC they'll probably come in a set because of how BlockTx works. There's no need to poll. It should be sufficient to request new merklepaths from the wallet server whenever the app is opened on device, and whenever a new payment is being considered prior to the construction of a transaction, to minimize BEEF size.
