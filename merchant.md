@@ -9,4 +9,3 @@ This is a payment UX flow between two smartphones.
 6. If it fails they are asked if they want to try sending it online.
 7. They press send to deliver the tx online.
 8. The merchant phone acknowledges receipt of the payment.
-
