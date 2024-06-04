@@ -1,3 +1,4 @@
 # Wallet Requirements
 
-* [In Person Payment Flow](./payment-flow.md)
+* [Payment Flow](./payment-flow.md)
+* [Merchant Payments UX](./merchant.md)
