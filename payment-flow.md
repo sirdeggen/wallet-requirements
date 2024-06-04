@@ -57,3 +57,17 @@ The operator will add a BSV satoshi input to pay BSV fees (1 satoshi), only afte
 | 100 UGX 1 sat |  |
 | 100 UGX 1 sat |  |
 
+## Transport
+
+Two options for delivery of the payment.
+
+### Online
+You can send the transaction to the receiving party wallet server, where it will be validated and broadcast to the network.
+
+### Offline
+This may be the preference whether or not the user has an internet connection as there will be less latency.
+
+Using NFC we transmit the payment data directly to the recipient phone. It then validates the transaction before delivering it to its own wallet server, where it will be validated again before broadcast to the network.
+
+## On Device Storage
+The offline state of utxos available to the device needs to be tracked such that 
