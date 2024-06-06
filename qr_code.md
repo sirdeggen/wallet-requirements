@@ -1,4 +1,4 @@
-## QR Code Example
+## [ DEPRECATED ] QR Code Example (team had a better idea, will update)
 
 The data merchants encode for recieving payments would be:
 ```json
